@@ -95,71 +95,10 @@ This dataset contains image-question pairs with **chosen** and **rejected** answ
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/omarsabri125/DPO-Finetuning-Qwen-3-VL.git
+cd DPO-Finetuning-Qwen-3-VL
 
-# Install dependencies
-pip install torch torchvision transformers datasets
-pip install llamafactory
-
-# Or install from requirements file
-pip install -r requirements.txt
 ```
-
----
-
-## 🚀 Usage
-
-### 1. Prepare the Dataset
-
-```bash
-python scripts/prepare_dataset.py
-```
-
-This step downloads the HuggingFace dataset, processes images as JPEGs, and converts everything to LlamaFactory's ShareGPT DPO format.
-
-### 2. Register the Dataset
-
-Update `data/dataset_info.json` to include your custom dataset entry, pointing to the formatted data file.
-
-### 3. Configure Training
-
-Edit `configs/dpo_config.yaml` to set your desired hyperparameters (see [Configuration](#-configuration) below).
-
-### 4. Run DPO Training
-
-```bash
-llamafactory-cli train configs/dpo_config.yaml
-```
-
----
-
-## 🔧 Configuration
-
-Training is controlled via a YAML configuration file. Key parameters include:
-
-```yaml
-model_name_or_path: Qwen/Qwen3-VL-4B-Instruct
-stage: dpo
-do_train: true
-finetuning_type: lora
-
-dataset: topic_overwrite
-template: qwen3_vl
-
-lora_rank: 8
-lora_target: all
-
-per_device_train_batch_size: 2
-gradient_accumulation_steps: 4
-learning_rate: 5.0e-5
-num_train_epochs: 3.0
-
-bf16: true
-output_dir: outputs/qwen3-vl-dpo
-```
-
----
 
 ## 📚 References
 
