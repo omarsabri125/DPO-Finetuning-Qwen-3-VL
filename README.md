@@ -18,8 +18,6 @@ A complete **Direct Preference Optimization (DPO)** fine-tuning pipeline for a *
 - [Dataset](#-dataset)
 - [Pipeline Overview](#️-pipeline-overview)
 - [Installation](#-installation)
-- [Usage](#-usage)
-- [Configuration](#-configuration)
 - [References](#-references)
 
 ---
